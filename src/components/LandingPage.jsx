@@ -71,7 +71,6 @@ const LandingPage = () => {
 
   return (
     <div className="font-sans bg-white text-gray-900">
-
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-white border-b">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
@@ -143,10 +142,18 @@ const LandingPage = () => {
       {/* WHY WE EXIST */}
       <section id="about" className="py-24">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold">Why Digitalpreneur Academy Exists</h2>
+          <h2 className="text-3xl font-bold">
+            Why Digitalpreneur Academy Exists
+          </h2>
           <p className="mt-6 text-gray-600 leading-relaxed">
-            We bridge the gap between education and execution, learning and
-            earning, and local limitations and global opportunities.
+            Digitalpreneur Academy was created to bridge the gap between
+            education and execution, learning and earning, and local limitations
+            and global opportunities.
+          </p>
+          <p className="mt-7 text-gray-600 leading-relaxed">
+            We empower students, youths, entrepreneurs, and professionals to
+            build sustainable digital careers without depending solely on
+            traditional jobs.
           </p>
         </div>
       </section>
@@ -167,7 +174,7 @@ const LandingPage = () => {
               "Crypto, Web3 & Financial Literacy",
               "Personal Branding & Online Influence",
               "Automation & Business Systems",
-            ].map(item => (
+            ].map((item) => (
               <div key={item} className="bg-white p-6 rounded-xl border">
                 <p className="font-medium">{item}</p>
               </div>
@@ -175,35 +182,112 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+      <section>
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Each course is designed for
+          </h2>
 
-      {/* WHO THIS IS FOR */}
-      <section id="audience" className="py-24">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold">Who This Is For</h2>
-
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
-              "Students seeking financial independence",
-              "Job seekers tired of limited opportunities",
-              "Entrepreneurs ready to go digital",
-              "Creators who want to monetize skills",
-              "Professionals building side income",
-              "Anyone ready to earn globally from Africa",
-            ].map(item => (
-              <div key={item} className="bg-gray-50 p-8 rounded-xl border">
-                <p className="font-semibold">{item}</p>
+              "●	Beginners",
+              "●	Intermediate learners",
+              "●	Entrepreneurs ready to scale",
+            ].map((item) => (
+              <div key={item} className="bg-white p-4 rounded-xl border">
+                <p className="font-small">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+      <section>
+        <p className="text-2xl font-soft text-center mb-11 py-12">No prior tech background required.</p>
+      </section>
+
+      {/* OUR LEARNING PHILOSOPHY */}
+<section id="philosophy" className="py-24">
+  <div className="max-w-5xl mx-auto px-6 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold">
+      Our Learning Philosophy
+    </h2>
+
+    <p className="mt-6 text-xl font-semibold text-gray-800">
+      Skills + Systems + Support = Sustainable Income
+    </p>
+
+    <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
+      At Digitalpreneur Academy, you don’t just learn theory.
+      You learn how to turn knowledge into real-world results.
+    </p>
+
+    <div className="grid md:grid-cols-4 gap-6 mt-12">
+      {[
+        "Apply what you learn",
+        "Build income streams",
+        "Create digital assets",
+        "Grow long-term wealth",
+      ].map((item) => (
+        <div
+          key={item}
+          className="bg-gray-50 p-6 rounded-xl border font-semibold"
+        >
+          {item}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+      
+
+     {/* WHO THIS IS FOR */}
+<section id="who" className="bg-gray-50 py-24">
+  <div className="max-w-5xl mx-auto px-6 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold">
+      Who This Is For
+    </h2>
+
+    <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
+      Digitalpreneur Academy is designed for driven individuals ready to
+      break limitations and build income in the digital economy.
+    </p>
+
+    <div className="grid md:grid-cols-2 gap-6 mt-12 text-left">
+      {[
+        "Students seeking financial independence",
+        "Job seekers tired of limited opportunities",
+        "Entrepreneurs who want to go digital",
+        "Creators who want to monetize their skills",
+        "Anyone ready to earn globally from Africa",
+      ].map((item) => (
+        <div
+          key={item}
+          className="flex items-start gap-4 bg-white p-6 rounded-xl border"
+        >
+          <span className="text-green-600 font-bold text-xl">✔</span>
+          <p className="font-medium text-gray-800">{item}</p>
+        </div>
+      ))}
+    </div>
+
+    <div className="mt-12 bg-black text-white p-8 rounded-2xl max-w-3xl mx-auto">
+      <p className="text-lg font-semibold">
+        If you have a smartphone, internet access, and the willingness to learn —
+        you qualify.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* MENTORSHIP */}
       <section id="mentorship" className="bg-gray-50 py-24">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold">Mentorship & Support</h2>
           <p className="mt-4 text-gray-600">
-            You’re not learning alone. We guide you from skill acquisition to execution.
+            You’re not learning alone. We guide you from skill acquisition to
+            execution.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -211,7 +295,7 @@ const LandingPage = () => {
               "Expert-led mentorship",
               "Supportive learning community",
               "Practical assignments & real-world projects",
-            ].map(item => (
+            ].map((item) => (
               <div key={item} className="bg-white p-8 rounded-2xl border">
                 <h3 className="font-semibold">{item}</h3>
               </div>
@@ -219,6 +303,85 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+      <section className="bg-gray-50 py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold">What Makes us Different</h2>
+          <p className="mt-4 text-gray-600">
+            You’re not learning alone. We guide you from skill acquisition to
+            execution.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {[
+              "✨ Structured learning paths",
+              "✨ Practical assignments & projects",
+              "✨ Community mentorship & support",
+              "✨ Business-minded training (not just academics)",
+              "✨ Opportunities for real income generation",
+              "✨ Faith-driven and purpose-centered growth model (optional if you want spiritual angle)"
+            ].map((item) => (
+              <div key={item} className="bg-white p-8 rounded-2xl border">
+                <h3 className="font-semibold">{item}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT YOU GET WHEN YOU JOIN */}
+<section id="benefits" className="bg-gray-50 py-24">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+    <h2 className="text-3xl font-bold">What You Get When You Join</h2>
+    <p className="mt-4 text-gray-600">
+      Everything you need to learn, build, and earn in the digital economy.
+    </p>
+
+    <div className="grid md:grid-cols-3 gap-8 mt-12">
+      {[
+        {
+          title: "Full Course Access",
+          desc: "Unlimited access to all Digitalpreneur Academy courses.",
+          icon: "🎓",
+        },
+        {
+          title: "Mobile-Friendly Platform",
+          desc: "Learn anytime, anywhere from your phone or laptop.",
+          icon: "📱",
+        },
+        {
+          title: "Supportive Community",
+          desc: "Connect with learners, mentors, and digital entrepreneurs.",
+          icon: "👥",
+        },
+        {
+          title: "Tools & Resources",
+          desc: "Ready-to-use templates, tools, and frameworks.",
+          icon: "🧩",
+        },
+        {
+          title: "Income-Building Guidance",
+          desc: "Practical support to help you build profitable systems.",
+          icon: "📈",
+        },
+        {
+          title: "Continuous Updates",
+          desc: "New programs, lessons, and opportunities added regularly.",
+          icon: "🔁",
+        },
+      ].map((item) => (
+        <div
+          key={item.title}
+          className="bg-white p-8 rounded-2xl border hover:shadow-lg transition"
+        >
+          <div className="text-4xl mb-4">{item.icon}</div>
+          <h3 className="font-bold text-lg">{item.title}</h3>
+          <p className="mt-2 text-gray-600 text-sm">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* FAQ */}
       <section id="faq" className="py-24">
@@ -246,18 +409,35 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="bg-black text-white py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold">
-            Start Learning. Start Building. Start Earning.
-          </h2>
+     {/* FINAL CALL TO ACTION */}
+<section className="bg-black text-white py-28">
+  <div className="max-w-4xl mx-auto px-6 text-center">
+    <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+      Start Your Digital Journey Today
+    </h2>
 
-          <button className="mt-10 bg-white text-black px-10 py-4 rounded-xl font-bold">
-            JOIN DIGITALPRENEUR ACADEMY
-          </button>
-        </div>
-      </section>
+    <div className="mt-8 space-y-2 text-lg text-white/80">
+      <p>Don’t just consume content.</p>
+      <p>Don’t just scroll online.</p>
+      <p className="font-semibold text-white">
+        Learn skills that pay you back for life.
+      </p>
+    </div>
+
+    <p className="mt-8 text-white/80 max-w-2xl mx-auto">
+      Join Digitalpreneur Academy today and take your first step
+      into the digital economy.
+    </p>
+
+    <button
+      className="mt-12 bg-white text-black px-12 py-5 rounded-xl
+                 font-bold text-lg hover:bg-gray-200 transition"
+    >
+      JOIN DIGITALPRENEUR ACADEMY
+    </button>
+  </div>
+</section>
+
 
       {/* FOOTER */}
       <footer className="py-12 text-center border-t">
