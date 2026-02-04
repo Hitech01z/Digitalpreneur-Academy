@@ -496,12 +496,20 @@ const LandingPage = () => {
             digital economy.
           </p>
 
-          <button
-            className="mt-12 bg-white text-black px-12 py-5 rounded-xl
-                 font-bold text-lg hover:bg-gray-200 transition"
-          >
-            JOIN DIGITALPRENEUR ACADEMY
-          </button>
+          <a
+  href="#waitlist"
+  className="
+    inline-block mt-12
+    bg-white text-black
+    px-12 py-5 rounded-xl
+    font-bold text-lg
+    hover:bg-gray-200
+    transition
+  "
+>
+  JOIN DIGITALPRENEUR ACADEMY
+</a>
+
         </div>
       </section>
 
