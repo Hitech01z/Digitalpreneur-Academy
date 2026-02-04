@@ -69,31 +69,75 @@ const LandingPage = () => {
     ],
   ];
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="font-sans bg-white text-gray-900">
-      {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 bg-white border-b">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-          <span className="font-extrabold tracking-tight">
-            DIGITALPRENEUR ACADEMY
-          </span>
+     {/* NAVBAR */}
+<nav className="sticky top-0 z-50 bg-white border-b">
+  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    
+    {/* LOGO */}
+    <span className="font-extrabold tracking-tight text-sm md:text-base">
+      DIGITALPRENEUR ACADEMY
+    </span>
 
-          <div className="flex gap-6 text-sm font-medium">
-            <a href="#about">About</a>
-            <a href="#learn">What You’ll Learn</a>
-            <a href="#audience">Who It’s For</a>
-            <a href="#mentorship">Mentorship</a>
-            <a href="#faq">FAQ</a>
-          </div>
+    {/* DESKTOP NAV */}
+    <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#about" className="hover:text-gray-500">About</a>
+      <a href="#learn" className="hover:text-gray-500">What You’ll Learn</a>
+      <a href="#who" className="hover:text-gray-500">Who It’s For</a>
+      <a href="#mentorship" className="hover:text-gray-500">Mentorship</a>
+      <a href="#faq" className="hover:text-gray-500">FAQ</a>
 
-          <a
-            href="#waitlist"
-            className="bg-black text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800"
-          >
-            Join Waitlist
-          </a>
-        </div>
-      </nav>
+      <a
+        href="#waitlist"
+        className="bg-black text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800"
+      >
+        Join Waitlist
+      </a>
+    </div>
+
+    {/* MOBILE MENU BUTTON */}
+    <button
+      onClick={() => setMenuOpen(!menuOpen)}
+      className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg border"
+      aria-label="Toggle menu"
+    >
+      <span className="text-2xl">{menuOpen ? "✕" : "☰"}</span>
+    </button>
+  </div>
+
+  {/* MOBILE MENU */}
+  {menuOpen && (
+    <div className="md:hidden border-t bg-white px-6 py-6 space-y-5 text-sm font-medium">
+      <a onClick={() => setMenuOpen(false)} href="#about" className="block">
+        About
+      </a>
+      <a onClick={() => setMenuOpen(false)} href="#learn" className="block">
+        What You’ll Learn
+      </a>
+      <a onClick={() => setMenuOpen(false)} href="#who" className="block">
+        Who It’s For
+      </a>
+      <a onClick={() => setMenuOpen(false)} href="#mentorship" className="block">
+        Mentorship
+      </a>
+      <a onClick={() => setMenuOpen(false)} href="#faq" className="block">
+        FAQ
+      </a>
+
+      <a
+        onClick={() => setMenuOpen(false)}
+        href="#waitlist"
+        className="block text-center bg-black text-white py-3 rounded-lg font-semibold"
+      >
+        Join Waitlist
+      </a>
+    </div>
+  )}
+</nav>
+
 
       {/* HERO */}
       <section className="bg-gray-50 py-24">
