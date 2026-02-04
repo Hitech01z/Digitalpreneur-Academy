@@ -30,14 +30,20 @@ const Countdown = () => {
   if (!timeLeft) return null;
 
   return (
-    <div className="flex justify-center gap-4 mt-6 flex-wrap">
+    <div className="flex justify-center gap-2 sm:gap-4 mt-6 flex-nowrap">
       {Object.entries(timeLeft).map(([key, value]) => (
         <div
           key={key}
-          className="bg-black text-white px-5 py-4 rounded-xl text-center min-w-[80px]"
+          className="
+            bg-black text-white 
+            px-3 py-2 sm:px-5 sm:py-4
+            rounded-xl 
+            text-center 
+            min-w-[60px] sm:min-w-[80px]
+          "
         >
-          <p className="text-2xl font-bold">{value}</p>
-          <span className="text-[11px] uppercase tracking-wide text-white/70">
+          <p className="text-lg sm:text-2xl font-bold leading-none">{value}</p>
+          <span className="text-[9px] sm:text-[11px] uppercase tracking-wide text-white/70">
             {key}
           </span>
         </div>
@@ -73,71 +79,91 @@ const LandingPage = () => {
 
   return (
     <div className="font-sans bg-white text-gray-900">
-     {/* NAVBAR */}
-<nav className="sticky top-0 z-50 bg-white border-b">
-  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    
-    {/* LOGO */}
-    <span className="font-extrabold tracking-tight text-sm md:text-base">
-      DIGITALPRENEUR ACADEMY
-    </span>
+      {/* NAVBAR */}
+      <nav className="sticky top-0 z-50 bg-white border-b">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* LOGO */}
+          <span className="font-extrabold tracking-tight text-sm md:text-base">
+            DIGITALPRENEUR ACADEMY
+          </span>
 
-    {/* DESKTOP NAV */}
-    <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-      <a href="#about" className="hover:text-gray-500">About</a>
-      <a href="#learn" className="hover:text-gray-500">What You’ll Learn</a>
-      <a href="#who" className="hover:text-gray-500">Who It’s For</a>
-      <a href="#mentorship" className="hover:text-gray-500">Mentorship</a>
-      <a href="#faq" className="hover:text-gray-500">FAQ</a>
+          {/* DESKTOP NAV */}
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#about" className="hover:text-gray-500">
+              About
+            </a>
+            <a href="#learn" className="hover:text-gray-500">
+              What You’ll Learn
+            </a>
+            <a href="#who" className="hover:text-gray-500">
+              Who It’s For
+            </a>
+            <a href="#mentorship" className="hover:text-gray-500">
+              Mentorship
+            </a>
+            <a href="#faq" className="hover:text-gray-500">
+              FAQ
+            </a>
 
-      <a
-        href="#waitlist"
-        className="bg-black text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800"
-      >
-        Join Waitlist
-      </a>
-    </div>
+            <a
+              href="#waitlist"
+              className="bg-black text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800"
+            >
+              Join Waitlist
+            </a>
+          </div>
 
-    {/* MOBILE MENU BUTTON */}
-    <button
-      onClick={() => setMenuOpen(!menuOpen)}
-      className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg border"
-      aria-label="Toggle menu"
-    >
-      <span className="text-2xl">{menuOpen ? "✕" : "☰"}</span>
-    </button>
-  </div>
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg border"
+            aria-label="Toggle menu"
+          >
+            <span className="text-2xl">{menuOpen ? "✕" : "☰"}</span>
+          </button>
+        </div>
 
-  {/* MOBILE MENU */}
-  {menuOpen && (
-    <div className="md:hidden border-t bg-white px-6 py-6 space-y-5 text-sm font-medium">
-      <a onClick={() => setMenuOpen(false)} href="#about" className="block">
-        About
-      </a>
-      <a onClick={() => setMenuOpen(false)} href="#learn" className="block">
-        What You’ll Learn
-      </a>
-      <a onClick={() => setMenuOpen(false)} href="#who" className="block">
-        Who It’s For
-      </a>
-      <a onClick={() => setMenuOpen(false)} href="#mentorship" className="block">
-        Mentorship
-      </a>
-      <a onClick={() => setMenuOpen(false)} href="#faq" className="block">
-        FAQ
-      </a>
+        {/* MOBILE MENU */}
+        {menuOpen && (
+          <div className="md:hidden border-t bg-white px-6 py-6 space-y-5 text-sm font-medium">
+            <a
+              onClick={() => setMenuOpen(false)}
+              href="#about"
+              className="block"
+            >
+              About
+            </a>
+            <a
+              onClick={() => setMenuOpen(false)}
+              href="#learn"
+              className="block"
+            >
+              What You’ll Learn
+            </a>
+            <a onClick={() => setMenuOpen(false)} href="#who" className="block">
+              Who It’s For
+            </a>
+            <a
+              onClick={() => setMenuOpen(false)}
+              href="#mentorship"
+              className="block"
+            >
+              Mentorship
+            </a>
+            <a onClick={() => setMenuOpen(false)} href="#faq" className="block">
+              FAQ
+            </a>
 
-      <a
-        onClick={() => setMenuOpen(false)}
-        href="#waitlist"
-        className="block text-center bg-black text-white py-3 rounded-lg font-semibold"
-      >
-        Join Waitlist
-      </a>
-    </div>
-  )}
-</nav>
-
+            <a
+              onClick={() => setMenuOpen(false)}
+              href="#waitlist"
+              className="block text-center bg-black text-white py-3 rounded-lg font-semibold"
+            >
+              Join Waitlist
+            </a>
+          </div>
+        )}
+      </nav>
 
       {/* HERO */}
       <section className="bg-gray-50 py-24">
@@ -246,84 +272,81 @@ const LandingPage = () => {
         </div>
       </section>
       <section>
-        <p className="text-2xl font-soft text-center mb-11 py-12">No prior tech background required.</p>
+        <p className="text-2xl font-soft text-center mb-11 py-12">
+          No prior tech background required.
+        </p>
       </section>
 
       {/* OUR LEARNING PHILOSOPHY */}
-<section id="philosophy" className="py-24">
-  <div className="max-w-5xl mx-auto px-6 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold">
-      Our Learning Philosophy
-    </h2>
+      <section id="philosophy" className="py-24">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Our Learning Philosophy
+          </h2>
 
-    <p className="mt-6 text-xl font-semibold text-gray-800">
-      Skills + Systems + Support = Sustainable Income
-    </p>
+          <p className="mt-6 text-xl font-semibold text-gray-800">
+            Skills + Systems + Support = Sustainable Income
+          </p>
 
-    <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
-      At Digitalpreneur Academy, you don’t just learn theory.
-      You learn how to turn knowledge into real-world results.
-    </p>
+          <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
+            At Digitalpreneur Academy, you don’t just learn theory. You learn
+            how to turn knowledge into real-world results.
+          </p>
 
-    <div className="grid md:grid-cols-4 gap-6 mt-12">
-      {[
-        "Apply what you learn",
-        "Build income streams",
-        "Create digital assets",
-        "Grow long-term wealth",
-      ].map((item) => (
-        <div
-          key={item}
-          className="bg-gray-50 p-6 rounded-xl border font-semibold"
-        >
-          {item}
+          <div className="grid md:grid-cols-4 gap-6 mt-12">
+            {[
+              "Apply what you learn",
+              "Build income streams",
+              "Create digital assets",
+              "Grow long-term wealth",
+            ].map((item) => (
+              <div
+                key={item}
+                className="bg-gray-50 p-6 rounded-xl border font-semibold"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-      
+      {/* WHO THIS IS FOR */}
+      <section id="who" className="bg-gray-50 py-24">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold">Who This Is For</h2>
 
-     {/* WHO THIS IS FOR */}
-<section id="who" className="bg-gray-50 py-24">
-  <div className="max-w-5xl mx-auto px-6 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold">
-      Who This Is For
-    </h2>
+          <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
+            Digitalpreneur Academy is designed for driven individuals ready to
+            break limitations and build income in the digital economy.
+          </p>
 
-    <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
-      Digitalpreneur Academy is designed for driven individuals ready to
-      break limitations and build income in the digital economy.
-    </p>
+          <div className="grid md:grid-cols-2 gap-6 mt-12 text-left">
+            {[
+              "Students seeking financial independence",
+              "Job seekers tired of limited opportunities",
+              "Entrepreneurs who want to go digital",
+              "Creators who want to monetize their skills",
+              "Anyone ready to earn globally from Africa",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-4 bg-white p-6 rounded-xl border"
+              >
+                <span className="text-green-600 font-bold text-xl">✔</span>
+                <p className="font-medium text-gray-800">{item}</p>
+              </div>
+            ))}
+          </div>
 
-    <div className="grid md:grid-cols-2 gap-6 mt-12 text-left">
-      {[
-        "Students seeking financial independence",
-        "Job seekers tired of limited opportunities",
-        "Entrepreneurs who want to go digital",
-        "Creators who want to monetize their skills",
-        "Anyone ready to earn globally from Africa",
-      ].map((item) => (
-        <div
-          key={item}
-          className="flex items-start gap-4 bg-white p-6 rounded-xl border"
-        >
-          <span className="text-green-600 font-bold text-xl">✔</span>
-          <p className="font-medium text-gray-800">{item}</p>
+          <div className="mt-12 bg-black text-white p-8 rounded-2xl max-w-3xl mx-auto">
+            <p className="text-lg font-semibold">
+              If you have a smartphone, internet access, and the willingness to
+              learn — you qualify.
+            </p>
+          </div>
         </div>
-      ))}
-    </div>
-
-    <div className="mt-12 bg-black text-white p-8 rounded-2xl max-w-3xl mx-auto">
-      <p className="text-lg font-semibold">
-        If you have a smartphone, internet access, and the willingness to learn —
-        you qualify.
-      </p>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* MENTORSHIP */}
       <section id="mentorship" className="bg-gray-50 py-24">
@@ -362,7 +385,7 @@ const LandingPage = () => {
               "✨ Community mentorship & support",
               "✨ Business-minded training (not just academics)",
               "✨ Opportunities for real income generation",
-              "✨ Faith-driven and purpose-centered growth model (optional if you want spiritual angle)"
+              "✨ Faith-driven and purpose-centered growth model (optional if you want spiritual angle)",
             ].map((item) => (
               <div key={item} className="bg-white p-8 rounded-2xl border">
                 <h3 className="font-semibold">{item}</h3>
@@ -373,59 +396,59 @@ const LandingPage = () => {
       </section>
 
       {/* WHAT YOU GET WHEN YOU JOIN */}
-<section id="benefits" className="bg-gray-50 py-24">
-  <div className="max-w-6xl mx-auto px-6 text-center">
-    <h2 className="text-3xl font-bold">What You Get When You Join</h2>
-    <p className="mt-4 text-gray-600">
-      Everything you need to learn, build, and earn in the digital economy.
-    </p>
+      <section id="benefits" className="bg-gray-50 py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold">What You Get When You Join</h2>
+          <p className="mt-4 text-gray-600">
+            Everything you need to learn, build, and earn in the digital
+            economy.
+          </p>
 
-    <div className="grid md:grid-cols-3 gap-8 mt-12">
-      {[
-        {
-          title: "Full Course Access",
-          desc: "Unlimited access to all Digitalpreneur Academy courses.",
-          icon: "🎓",
-        },
-        {
-          title: "Mobile-Friendly Platform",
-          desc: "Learn anytime, anywhere from your phone or laptop.",
-          icon: "📱",
-        },
-        {
-          title: "Supportive Community",
-          desc: "Connect with learners, mentors, and digital entrepreneurs.",
-          icon: "👥",
-        },
-        {
-          title: "Tools & Resources",
-          desc: "Ready-to-use templates, tools, and frameworks.",
-          icon: "🧩",
-        },
-        {
-          title: "Income-Building Guidance",
-          desc: "Practical support to help you build profitable systems.",
-          icon: "📈",
-        },
-        {
-          title: "Continuous Updates",
-          desc: "New programs, lessons, and opportunities added regularly.",
-          icon: "🔁",
-        },
-      ].map((item) => (
-        <div
-          key={item.title}
-          className="bg-white p-8 rounded-2xl border hover:shadow-lg transition"
-        >
-          <div className="text-4xl mb-4">{item.icon}</div>
-          <h3 className="font-bold text-lg">{item.title}</h3>
-          <p className="mt-2 text-gray-600 text-sm">{item.desc}</p>
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {[
+              {
+                title: "Full Course Access",
+                desc: "Unlimited access to all Digitalpreneur Academy courses.",
+                icon: "🎓",
+              },
+              {
+                title: "Mobile-Friendly Platform",
+                desc: "Learn anytime, anywhere from your phone or laptop.",
+                icon: "📱",
+              },
+              {
+                title: "Supportive Community",
+                desc: "Connect with learners, mentors, and digital entrepreneurs.",
+                icon: "👥",
+              },
+              {
+                title: "Tools & Resources",
+                desc: "Ready-to-use templates, tools, and frameworks.",
+                icon: "🧩",
+              },
+              {
+                title: "Income-Building Guidance",
+                desc: "Practical support to help you build profitable systems.",
+                icon: "📈",
+              },
+              {
+                title: "Continuous Updates",
+                desc: "New programs, lessons, and opportunities added regularly.",
+                icon: "🔁",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="bg-white p-8 rounded-2xl border hover:shadow-lg transition"
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="font-bold text-lg">{item.title}</h3>
+                <p className="mt-2 text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* FAQ */}
       <section id="faq" className="py-24">
@@ -453,35 +476,34 @@ const LandingPage = () => {
         </div>
       </section>
 
-     {/* FINAL CALL TO ACTION */}
-<section className="bg-black text-white py-28">
-  <div className="max-w-4xl mx-auto px-6 text-center">
-    <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-      Start Your Digital Journey Today
-    </h2>
+      {/* FINAL CALL TO ACTION */}
+      <section className="bg-black text-white py-28">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+            Start Your Digital Journey Today
+          </h2>
 
-    <div className="mt-8 space-y-2 text-lg text-white/80">
-      <p>Don’t just consume content.</p>
-      <p>Don’t just scroll online.</p>
-      <p className="font-semibold text-white">
-        Learn skills that pay you back for life.
-      </p>
-    </div>
+          <div className="mt-8 space-y-2 text-lg text-white/80">
+            <p>Don’t just consume content.</p>
+            <p>Don’t just scroll online.</p>
+            <p className="font-semibold text-white">
+              Learn skills that pay you back for life.
+            </p>
+          </div>
 
-    <p className="mt-8 text-white/80 max-w-2xl mx-auto">
-      Join Digitalpreneur Academy today and take your first step
-      into the digital economy.
-    </p>
+          <p className="mt-8 text-white/80 max-w-2xl mx-auto">
+            Join Digitalpreneur Academy today and take your first step into the
+            digital economy.
+          </p>
 
-    <button
-      className="mt-12 bg-white text-black px-12 py-5 rounded-xl
+          <button
+            className="mt-12 bg-white text-black px-12 py-5 rounded-xl
                  font-bold text-lg hover:bg-gray-200 transition"
-    >
-      JOIN DIGITALPRENEUR ACADEMY
-    </button>
-  </div>
-</section>
-
+          >
+            JOIN DIGITALPRENEUR ACADEMY
+          </button>
+        </div>
+      </section>
 
       {/* FOOTER */}
       <footer className="py-12 text-center border-t">
